@@ -11,10 +11,9 @@ class Validator(object):
                 number = number.replace(' ', '')
             self.isValid =  number.isdigit() and len(number) == 10
             if self.isValid:
-                num = number.replace(' ', '')
                 multiplier = 10
                 n = 0
-                numArray = list(num)
+                numArray = list(number)
                 for value in numArray:
                     if multiplier == 1:
                         break
