@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding=utf-8
+
 import unittest
 from src.validator import Validator
 
@@ -24,7 +27,7 @@ class ValidatorTests(unittest.TestCase):
         val = Validator()
         self.validator.validate(val)
         self.assertFalse(self.validator.isValid)
-        
+
         self.validator.validate("1745438912")
         self.assertTrue(self.validator.isValid)
 
@@ -45,15 +48,16 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue(self.validator.isValid)
 
     def test_validator(self):
-        #test remainder 10
+        # test remainder 10
         self.validator.validate("1645418912")
         self.assertFalse(self.validator.isValid)
-        #test remainder 11
+        # test remainder 11
         self.validator.validate("1645418822")
         self.assertFalse(self.validator.isValid)
 
     def tearDown(self):
         self.validator = None
+
 
 if __name__ == '__main__':
     unittest.main(exit=False)
